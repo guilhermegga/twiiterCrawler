@@ -1,6 +1,9 @@
 package main;
 
+import java.time.LocalDateTime;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import crawler.PegaDadosTwitter;
 import repository.CrudDados;
@@ -11,31 +14,37 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-			
-		/*configuraçoes do arquivo xml
-		 * consulte classe XmlUtil para ver exemplo do arquivo
-		*/
-		
-		XmlUtil xml = new XmlUtil();
-		
-		//qual caminho esta o xml
-		xml.setCaminhoXML("/home/guilherme/eclipse-workspace/tags.xml");
-		
-		//qual tag buscar no xml
-		xml.setTagXml("palavra");
-	
-		//retorna uma lista de palavras do xml
-		List<String> palavrasChave = xml.retornaPalavrasXml();
+		try {
+			/*
+			 * configuraçoes do arquivo xml consulte classe XmlUtil para ver exemplo do
+			 * arquivo
+			 */
 
-		CrudDados dao = new CrudDadosImpl();
-		PegaDadosTwitter dadosTwitter = new PegaDadosTwitter();
+			XmlUtil xml = new XmlUtil();
 
-		for (String s : palavrasChave) {
+			// qual caminho esta o xml
+			xml.setCaminhoXML("/home/guilherme/eclipse-workspace/tags.xml");
 
-			dao.save(dadosTwitter.buscaDados(s));
+			// qual tag buscar no xml
+			xml.setTagXml("palavra");
 
+			// retorna uma lista de palavras do xml
+			List<String> palavrasChave = xml.retornaPalavrasXml();
+
+			CrudDados dao = new CrudDadosImpl();
+			PegaDadosTwitter dadosTwitter = new PegaDadosTwitter();
+
+			for (String s : palavrasChave) {
+
+				dao.save(dadosTwitter.buscaDados(s));
+
+			}
+
+			System.out.println("Executado com sucesso! - " + LocalDateTime.now());
+
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e, "Erro", JOptionPane.ERROR_MESSAGE);
 		}
-
 	}
 
 }
