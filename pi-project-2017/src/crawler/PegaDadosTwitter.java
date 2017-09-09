@@ -22,10 +22,11 @@ public class PegaDadosTwitter {
 
 		// set chaves de autorizaçoes para pegar dados
 		config = new ConfigurationBuilder();
-		config.setOAuthConsumerKey("XXXX");
-		config.setOAuthConsumerSecret("XXXX");
-		config.setOAuthAccessToken("XXXXXXXX");
-		config.setOAuthAccessTokenSecret("XXXXX");
+		config.setOAuthConsumerKey("xxxx");
+		config.setOAuthConsumerSecret("xxxx");
+		config.setOAuthAccessToken("xxxxxx");
+		config.setOAuthAccessTokenSecret("xxxxx");
+
 
 		twitterFactory = new TwitterFactory(config.build());
 		tw = twitterFactory.getInstance();

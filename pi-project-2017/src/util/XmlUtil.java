@@ -6,17 +6,27 @@ import java.util.List;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+
+
+/**configuraçoes do arquivo xml
+ * ex de xml:
+ * <list>
+ * <key>keyword</key>
+ * <key>keyword</key>
+ * .....
+ * </list>
+ * 
+ * **/
 public class XmlUtil {
 
-	private final String tagXml = "palavra";
-	private final String caminhoXML = "/home/guilherme/eclipse-workspace/tags.xml";
+	private  String tagXml ;
+	private  String caminhoXML ;
 
+	
 	@SuppressWarnings("unchecked")
 	public List<String> retornaPalavrasXml() {
-
-		File file = new File(caminhoXML);
-
-		return (List<String>) lerXML().fromXML(file);
+	
+		return (List<String>) lerXML().fromXML(new File(caminhoXML));
 
 	}
 
@@ -38,5 +48,20 @@ public class XmlUtil {
 		return stream;
 
 	}
+
+	
+
+	public void setTagXml(String tagXml) {
+		this.tagXml = tagXml;
+	}
+
+
+	public void setCaminhoXML(String caminhoXML) {
+		this.caminhoXML = caminhoXML;
+	}
+	
+	
+	
+	
 
 }
