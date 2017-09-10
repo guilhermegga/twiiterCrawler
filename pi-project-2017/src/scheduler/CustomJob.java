@@ -16,13 +16,12 @@ import util.XmlUtil;
 
 public class CustomJob implements Job {
 
-	
 	/**
 	 * Tudo que está neste metodo será chamado pelo scheduler e será executado.
-	 * */
+	 */
 	@Override
 	public void execute(JobExecutionContext arg0) throws JobExecutionException {
-		
+
 		try {
 			/*
 			 * configuraçoes do arquivo xml consulte classe XmlUtil para ver exemplo do
@@ -52,13 +51,10 @@ public class CustomJob implements Job {
 			System.out.println("Executado com sucesso! - " + LocalDateTime.now());
 
 		} catch (Exception e) {
-			
-//			JOptionPane.showMessageDialog(null, e, "Erro", JOptionPane.ERROR_MESSAGE);
-			e.printStackTrace();
+
+			throw new JobExecutionException();
 		}
-		
+
 	}
 
-	
-	
 }

@@ -10,8 +10,9 @@ public class ConexaoMongo {
 
 	private final String host ="localhost";
 	private final int port= 27017;
-	private final String dbName="local";
-	private final String collection = "pi-app";
+	private final String dbName="local"; // nome do banco
+	
+	private final String collection = "pi-app"; // nome da collection que será salvo os dados
 	private MongoClient mongoClient;
 	
 	

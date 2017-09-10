@@ -27,9 +27,8 @@ public class Principal {
 					.withIdentity("job1", "group1")
 					.build();
 			
-			//trigger que será executado a cada 15 min
+			//trigger que será executado a cada 5 min
 			Trigger trigger = newTrigger().withIdentity("trigger1", "group1").startNow()
-//					.withSchedule(CronScheduleBuilder.cronSchedule("0 0 8am ? * MON-FRI"))
 					.withSchedule(CronScheduleBuilder.cronSchedule("0 0/5 * * * ?"))
 					.build();
 
