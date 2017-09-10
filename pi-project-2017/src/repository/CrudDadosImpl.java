@@ -13,6 +13,7 @@ public class CrudDadosImpl implements CrudDados {
 	 * Este método recebe uma lista de dados, prepara e insere todos na collection
 	 * do banco de dados.
 	 * 
+	 * @param List<ModelDados>
 	 * @throws Exception
 	 */
 	@Override
@@ -23,6 +24,8 @@ public class CrudDadosImpl implements CrudDados {
 
 			List<Document> documentos = new ArrayList<>();
 
+			//TODO: id sendo o id do tweet postado... isso pode dar erro se ele buscar o mesmo
+			//mas nao atrapalha o schedule.
 			for (ModelDados modelDados : dados) {
 
 				documentos.add(new Document("_id", modelDados.getId())
