@@ -22,10 +22,10 @@ public class PegaDadosTwitter {
 
 		// set chaves de autorizaçoes para pegar dados
 		config = new ConfigurationBuilder();
-		config.setOAuthConsumerKey("xxxx");
-		config.setOAuthConsumerSecret("xxxx");
-		config.setOAuthAccessToken("xxxxxx");
-		config.setOAuthAccessTokenSecret("xxxxx");
+		config.setOAuthConsumerKey("3OKAOOEoPlJ5aQKR3ZII5OQGY");
+		config.setOAuthConsumerSecret("IdfwEWchz8Mv468pklbb06px08lpDKHYHMEGSKpuLWYjtD1pMa");
+		config.setOAuthAccessToken("296608449-X8wgkb5pbreYlU1gcSNBNayJTGuF1SyRIX6zapp3");
+		config.setOAuthAccessTokenSecret("nxKcuaGed9V7kxQhU5DDCy3FrGqcuzwqZgHdvT5Gtb9Cf");
 
 
 		twitterFactory = new TwitterFactory(config.build());
@@ -51,8 +51,13 @@ public class PegaDadosTwitter {
 
 			// pega so o que é importante dos status e joga em uma outra lista de modelDados
 			for (Status st : tweets) {
-
-				dados.add(new ModelDados(st.getUser().getScreenName(), st.getText(), st.getCreatedAt()));
+				
+				dados.add(new ModelDados(String.valueOf(st.getId()),
+						st.getUser().getScreenName(),
+						st.getText(),
+						st.getCreatedAt(),
+						st.getGeoLocation(),
+						st.getPlace()));
 
 			}
 
