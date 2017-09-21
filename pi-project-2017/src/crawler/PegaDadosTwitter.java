@@ -25,10 +25,10 @@ public class PegaDadosTwitter {
 
 		// autorizaçoes para buscar os dados(tiradas com cadastro no twitter dev)
 		config = new ConfigurationBuilder();
-		config.setOAuthConsumerKey("3OKAOOEoPlJ5aQKR3ZII5OQGY");
-		config.setOAuthConsumerSecret("IdfwEWchz8Mv468pklbb06px08lpDKHYHMEGSKpuLWYjtD1pMa");
-		config.setOAuthAccessToken("296608449-X8wgkb5pbreYlU1gcSNBNayJTGuF1SyRIX6zapp3");
-		config.setOAuthAccessTokenSecret("nxKcuaGed9V7kxQhU5DDCy3FrGqcuzwqZgHdvT5Gtb9Cf");
+		config.setOAuthConsumerKey("XXXXXXXXXXXXXXXXXXXXXX");
+		config.setOAuthConsumerSecret("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+		config.setOAuthAccessToken("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+		config.setOAuthAccessTokenSecret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
 		twitterFactory = new TwitterFactory(config.build());
